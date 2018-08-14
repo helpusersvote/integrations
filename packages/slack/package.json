@@ -1,0 +1,22 @@
+{
+  "name": "@helpusersvote/integrations-slack",
+  "description": "Help Users Vote integration with Slack",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/helpusersvote/integrations.git"
+  },
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@slack/client": "^4.3.1",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "express-winston": "^2.6.0",
+    "winston": "^3.0.0"
+  }
+}
