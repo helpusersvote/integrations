@@ -1,0 +1,45 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  labels:
+    heritage: huv
+    app: integration-slack
+  name: integration-slack
+spec:
+  selector:
+    matchLabels:
+      app: integration-slack 
+  template:
+    metadata:
+      labels:
+        app: integration-slack
+      name: integration-slack
+    spec:
+      containers:
+        - name: integration-slack
+          image: helpusersvote/integration-slack:194iJjN1Uk9uo1lZRPQ4im0O19g
+          env:
+            - name: CONFIG_API_HOST
+              value: http://huv-secret-api
+            - name: SLACK_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: slack-election-countdown
+                  key: client-id
+            - name: SLACK_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: slack-election-countdown
+                  key: client-secret
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /internal/health
+              port: 3000
+          readinessProbe:
+            httpGet:
+              path: /internal/health
+              port: 3000

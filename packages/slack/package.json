@@ -17,6 +17,7 @@
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-winston": "^2.6.0",
+    "lodash": "^4.17.10",
     "winston": "^3.0.0"
   }
 }
