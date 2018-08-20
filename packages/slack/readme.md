@@ -1,4 +1,4 @@
-# @helpusersvote/integrations
+# @helpusersvote/integrations-slack
 
 Check out on the [Slack App Directory →](https://slack.com/apps/AC4FLGD2S-us-election-countdown)
 
