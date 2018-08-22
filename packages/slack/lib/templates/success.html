@@ -113,5 +113,43 @@
         </div>
       </div>
     </div>
+    <script type="text/javascript">
+      if (typeof window.fetch === 'undefined') {
+        // handle no fetch
+      }
+
+      let btn = document.querySelector('.btn-example')
+      let params = new URLSearchParams(window.location.search)
+
+      if (btn) {
+        btn.addEventListener('click', () => {
+          let type = params.get('type')
+          let team_id = params.get('team')
+          let channel_id = params.get('channel')
+
+          if (!type || !team_id || !channel_id) {
+            console.error('Missing type, team or channel!')
+            return
+          }
+
+          fetch(`/${type}/welcome`, {
+            method: 'post',
+            body: JSON.stringify({ team_id, channel_id }),
+            headers: {
+              'accept': 'application/json',
+              'content-type': 'application/json'
+            }
+          }).then(r => r.json()).then(data => {
+            if (data.ok) {
+              console.log('Sent message!')
+            } else {
+              console.error(data.message || 'Unknown error!')
+            }
+          }).catch(err => {
+            throw err
+          })
+        })
+      }
+    </script>
   </body>
 </html>

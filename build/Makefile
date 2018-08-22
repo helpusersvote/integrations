@@ -8,7 +8,7 @@ GCR_REPO=us.gcr.io/$(GCP_PROJECT)/$(NAME)
 DOCKERHUB_ORG=helpusersvote
 DOCKERHUB_IMAGE=$(DOCKERHUB_ORG)/$(NAME)
 
-db:
+build:
 	@make docker-build docker-push
 
 docker-build:

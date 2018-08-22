@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: integration-slack
-          image: helpusersvote/integration-slack:194iJjN1Uk9uo1lZRPQ4im0O19g
+          image: helpusersvote/integration-slack:1953hCsTa812VeHURaizSsQF2U4
           env:
             - name: CONFIG_API_HOST
               value: http://huv-secret-api
