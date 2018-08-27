@@ -1,6 +1,9 @@
 node_modules/
 manifests/secrets/
 funk.json
+.DS_Store
+*.crx
+*.pem
 *.tmp
 *.log
 .env

@@ -1,8 +1,4 @@
 {
-   "background": {
-      "persistent": false,
-      "scripts": [ "countdown.js" ]
-   },
    "chrome_url_overrides": {
       "newtab": "dashboard.html"
    },
@@ -14,7 +10,7 @@
       "48": "icon-48.png"
    },
    "manifest_version": 2,
-   "name": "YC Demo Day Clock",
+   "name": "2018 U.S. Election Day Countdown",
    "offline_enabled": true,
    "version": "1.0"
 }
