@@ -2,6 +2,7 @@ node_modules/
 manifests/secrets/
 funk.json
 .DS_Store
+*.zip
 *.crx
 *.pem
 *.tmp
